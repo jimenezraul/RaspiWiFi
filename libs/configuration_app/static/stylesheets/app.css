@@ -1,68 +1,73 @@
 /* General
 ---------------------------------------------------------*/
 *, :after, :before {
-box-sizing: border-box;
-}
-body,
-html {
-margin:0;
-padding:0;
+    box-sizing: border-box;
 }
 
-body{
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
     background-color: #000;
-    margin:0;
+    margin: 0;
     color: white;
 }
 
-div#mainContent{
-    padding:.3em;
-    background-color: #000;
+div#mainContent {
+    padding: .3em;
     width: 100%;
     margin: 0 auto;
     text-align: center;
     font-size: 3.5rem;
     color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 div#mainContent h1 {
-    margin:0 0 .5em 0;
-    font-size:3rem;
+    margin: 0;
+    font-size: 3rem;
 }
 
-div#mainContent ul{
+div#mainContent ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-div#mainContent form {
-    margin-top:-2em;
-}
-
-div#wpaStatus{
+div#wpaStatus {
     padding: 4px;
     margin: 0 0 10px 0;
     width: 250px;
-    background-color: #928043;
+    background-color: #0495de;
     text-align: left;
     font-size: .3em;
 }
 
-div#wpaStatus a{
+div#wpaStatus a {
     color: #fff;
 }
 
 label[for=ssid],
-label[for=wifi_key]{
-    font-size:1.9rem;
+label[for=wifi_key] {
+    font-size: 1.9rem;
+}
+
+p {
+    font-size: 1.5rem;
 }
 
 /* Select
 ---------------------------------------------------------*/
 
 li label {
-    display:inline-block;
+    display: inline-block;
     margin: 0.5em 0;
     padding: 0.5em 0;
 }
@@ -76,7 +81,7 @@ li.wifiNetwork:after {
     content: '▼';
     position: absolute;
     width: 25px;
-    color: #deab04;
+    color: #0495de;
     font-weight: bold;
     font-size: 1.4rem;
     right: 0px;
@@ -90,13 +95,13 @@ select.wifiNetworkInputs {
     position: relative;
     width: 100%;
     background: #111;
-    color: #999;
+    color: #f2f2f2;
     border: none;
     outline: none;
     font-size: 1.5rem;
     padding: 1em;
     margin: 0;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
     height: auto;
     -webkit-appearance: none;
@@ -104,65 +109,64 @@ select.wifiNetworkInputs {
     appearance: none;
 }
 
-.wifiNetworkInputs{
+.wifiNetworkInputs {
     width: 100%;
-    padding:1em;
+    padding: 1em;
     font-size: 1.4rem;
     color: #999;
     background: #111;
-    border:#999 solid 1px;
+    border: #99999984 solid 1px;
+    border-radius: 10px;
 }
 
-.wifiConnectButton{
+.wifiConnectButton {
     width: 100%;
-    margin:2em 0;
-    padding:.5em;
-    background-color: #deab04;
+    margin: 2em 0;
+    padding: .5em;
+    background-color: #0495de;
     font-size: 2rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    /* rounded */
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.manualSSIDEntry {
+    font-size: 1rem;
     color: #fff;
 }
 
-.manualSSIDEntry{
-	font-size: 1rem;
-	color: #fff;
-}
-
-div#wpaCredentialsForm{
+div#wpaCredentialsForm {
     margin: 60px 0 0 0;
 }
 
-.wpaEnabledCheckbox{
+.wpaEnabledCheckbox {
     height: 46px;
     width: 46px;
 }
 
-div#saveCredentialsOutput{
-  width: 60%;
-  margin: 0 0 0 20%;
-  text-align: center;
-  font-size: 1.7em;
+div#saveCredentialsOutput {
+    width: 60%;
+    margin: 0 0 0 20%;
+    text-align: center;
+    font-size: 1.7em;
 }
 
-.saveCredentialsSSID{
-  color: #deab04;
-  font-size: 2em;
+.saveCredentialsSSID {
+    color: #0495de;
+    font-size: 2em;
 }
 
 /* Wifi Icon
 ---------------------------------------------------------*/
 
-.wifiIcon {
+.wifi {
+    filter: brightness(0) invert(1);
+    width: 150px;
+    margin: 0 auto;
     padding: 10px;
-}
-.wifiIcon, .wifiIcon:before {
-    display: inline-block;
-    border: 40px double transparent;
-    border-top-color: currentColor;
-    border-radius: 50%;
-}
-.wifiIcon:before {
-    content: '';
-    width: 0; height: 0;
 }
 
 /* Desktop
@@ -170,16 +174,18 @@ div#saveCredentialsOutput{
 
 @media (min-width: 800px) {
     div#mainContent h1 {
-        font-size:4.5rem;
+        font-size: 4.5rem;
     }
+
     div#mainContent {
-        max-width:768px;
+        max-width: 768px;
     }
+
     li.wifiNetwork:after {
         content: '▼';
         position: absolute;
         width: 50px;
-        color: #deab04;
+        color: #0495de;
         font-weight: bold;
         font-size: 2rem;
         right: 0px;
@@ -189,4 +195,12 @@ div#saveCredentialsOutput{
         z-index: 2;
     }
 
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
